@@ -4,8 +4,8 @@ import Cookies from "js-cookie";
 import { Types } from "../constants/actionTypes";
 
 const ApiManager = axios.create({
-  // baseURL: "http://127.0.0.1:3001/mlndash-test",
-  baseURL: "https://mln-flask-backend-2.sbtopzzzlg.repl.co/mlndash-test",
+  baseURL: "http://127.0.0.1:3001/mlndash-test",
+  // baseURL: "https://mln-flask-backend-2.sbtopzzzlg.repl.co/mlndash-test",
   withCredentials: true,
 });
 

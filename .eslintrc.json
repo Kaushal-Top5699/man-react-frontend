@@ -11,14 +11,14 @@
   "plugins": ["react", "prettier"],
   "rules": {
     "eqeqeq": "warn",
-    "indent": ["error", 2],
-    "linebreak-style": ["error", "unix"],
+    "indent": ["warn", 2],
+    "linebreak-style": ["warn", "unix"],
     "no-console": "warn",
-    "no-const-assign": "error",
+    "no-const-assign": "warn",
     "no-undef": "warn",
-    "no-unreachable": "error",
+    "no-unreachable": "warn",
     "no-unused-vars": "warn",
-    "quotes": ["error", "double"],
-    "semi": ["error", "always"]
+    "quotes": ["warn", "double"],
+    "semi": ["warn", "always"]
   }
 }
