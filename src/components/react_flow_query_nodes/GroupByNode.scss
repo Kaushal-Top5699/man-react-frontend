@@ -1,0 +1,202 @@
+.query-group-by-node {
+  all: unset;
+
+  cursor: pointer;
+  position: relative;
+
+  background-color: whitesmoke;
+  color: rgb(200, 90, 0);
+  font-weight: bold;
+  font-size: larger;
+  border: 1px solid rgb(140, 63, 0);
+  border-radius: 20px;
+  padding: 15px 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+
+  transition: background-color 200ms ease, color 200ms ease;
+  &:hover {
+    background-color: rgb(140, 63, 0);
+    color: white;
+  }
+
+  .dismiss-node {
+    cursor: pointer;
+
+    height: 20px;
+
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+}
+
+.qgrpbyn-dialog {
+  position: fixed;
+  z-index: 1000;
+  cursor: default;
+
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+
+  border: 0px;
+  border-radius: 25px;
+
+  &::-webkit-backdrop {
+    background: hsl(0 0% 0% / 50%);
+  }
+
+  &::backdrop {
+    background: hsl(0 0% 0% / 50%);
+  }
+
+  .qgrpbyn-body {
+    all: unset;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+
+    .head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: space-between;
+
+      .title {
+        font-weight: bold;
+        font-size: larger;
+      }
+
+      img {
+        cursor: pointer;
+
+        height: 30px;
+        padding: 5px;
+
+        &:hover {
+          background-color: whitesmoke;
+        }
+      }
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      width: 100%;
+
+      &.inline-field {
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input[type="text"] {
+        all: unset;
+
+        cursor: text;
+
+        padding: 10px 20px;
+        background-color: whitesmoke;
+        border-radius: 5px;
+      }
+
+      select {
+        all: unset;
+
+        cursor: text;
+
+        padding: 10px 20px;
+        background-color: whitesmoke;
+        border-radius: 5px;
+      }
+
+      .select-fields {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 10px;
+
+        max-height: 400px;
+        overflow-y: auto;
+
+        .select-field {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+        }
+      }
+
+      .having-condition-container {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+
+        padding: 5px;
+
+        .having-condition {
+          display: grid;
+          grid-template-columns: -webkit-min-content auto auto -webkit-min-content;
+          grid-template-columns: min-content auto auto min-content;
+          gap: 10px;
+
+          img {
+            cursor: pointer;
+
+            height: 30px;
+
+            padding: 5px;
+
+            &:hover {
+              background-color: whitesmoke;
+            }
+          }
+        }
+
+        .error-message {
+          color: darkred;
+          margin-bottom: 10px;
+
+          font-size: small;
+
+          text-align: end;
+        }
+      }
+    }
+
+    button {
+      all: unset;
+
+      &:enabled {
+        cursor: pointer;
+
+        background-color: black;
+        color: whitesmoke;
+      }
+
+      &:disabled {
+        background-color: grey;
+        color: whitesmoke;
+      }
+
+      padding: 15px;
+
+      display: grid;
+      place-content: center;
+    }
+  }
+}

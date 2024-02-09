@@ -1,0 +1,209 @@
+.query-aggregate-node {
+  all: unset;
+
+  cursor: pointer;
+  position: relative;
+
+  background-color: whitesmoke;
+  color: rgb(144, 0, 200);
+  font-weight: bold;
+  font-size: larger;
+  border: 1px solid rgb(99, 0, 138);
+  border-radius: 20px;
+  padding: 15px 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+
+  .aggregate-func-name {
+    font-size: smaller;
+    font-weight: normal;
+  }
+
+  transition: background-color 200ms ease, color 200ms ease;
+  &:hover {
+    background-color: rgb(99, 0, 138);
+    color: white;
+  }
+
+  .dismiss-node {
+    cursor: pointer;
+
+    height: 20px;
+
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+}
+
+.qaggn-dialog {
+  position: fixed;
+  z-index: 1000;
+  cursor: default;
+
+  width: 400px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+
+  border: 0px;
+  border-radius: 25px;
+
+  &::-webkit-backdrop {
+    background: hsl(0 0% 0% / 50%);
+  }
+
+  &::backdrop {
+    background: hsl(0 0% 0% / 50%);
+  }
+
+  .qaggn-body {
+    all: unset;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    padding: 10px;
+
+    .head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: space-between;
+
+      .title {
+        font-weight: bold;
+        font-size: larger;
+      }
+
+      img {
+        cursor: pointer;
+
+        height: 30px;
+        padding: 5px;
+
+        &:hover {
+          background-color: whitesmoke;
+        }
+      }
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+
+      .title {
+        font-weight: bold;
+      }
+
+      select {
+        all: unset;
+
+        cursor: pointer;
+
+        padding: 10px 20px;
+        background-color: whitesmoke;
+        border-radius: 5px;
+      }
+
+      .error-message {
+        color: darkred;
+        margin-bottom: 10px;
+
+        font-size: small;
+      }
+    }
+
+    .fields {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+
+      max-height: 250px;
+      overflow-y: auto;
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+
+        .error-messages {
+          width: 100%;
+
+          text-align: end;
+          .error-message {
+            color: darkred;
+            margin-bottom: 10px;
+
+            font-size: small;
+          }
+        }
+
+        .field-body {
+          width: 100%;
+
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          input[type="checkbox"] {
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+            height: -webkit-fit-content;
+            height: -moz-fit-content;
+            height: fit-content;
+          }
+
+          input[type="text"] {
+            all: unset;
+
+            cursor: text;
+
+            padding: 10px 20px;
+            background-color: whitesmoke;
+            border-radius: 5px;
+
+            &:-moz-read-only {
+              color: grey;
+            }
+
+            &:read-only {
+              color: grey;
+            }
+          }
+        }
+      }
+    }
+
+    button {
+      all: unset;
+
+      &:enabled {
+        cursor: pointer;
+
+        background-color: black;
+        color: whitesmoke;
+      }
+
+      &:disabled {
+        background-color: grey;
+        color: whitesmoke;
+      }
+
+      padding: 15px;
+
+      display: grid;
+      place-content: center;
+    }
+  }
+}

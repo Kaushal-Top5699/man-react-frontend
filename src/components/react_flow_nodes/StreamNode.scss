@@ -1,0 +1,258 @@
+.stream-node {
+  all: unset;
+
+  cursor: pointer;
+  position: relative;
+
+  background-color: whitesmoke;
+  color: rgb(0, 104, 138);
+  font-weight: bold;
+  font-size: larger;
+  border: 1px solid rgb(0, 71, 94);
+  border-radius: 20px;
+  padding: 15px 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+
+  transition: background-color 200ms ease, color 200ms ease;
+  &:hover {
+    background-color: rgb(0, 71, 94);
+    color: white;
+  }
+
+  .stream-name {
+    font-size: smaller;
+    font-weight: normal;
+  }
+
+  .dismiss-node {
+    cursor: pointer;
+
+    height: 20px;
+
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+}
+
+.stream-node-editor-dialog {
+  position: fixed;
+  z-index: 2000;
+
+  width: 600px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 20px;
+
+  border: 0px;
+  border-radius: 25px;
+
+  &::-webkit-backdrop {
+    background: hsl(0 0% 0% / 50%);
+  }
+
+  &::backdrop {
+    background: hsl(0 0% 0% / 50%);
+  }
+
+  .dialog-content {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-end;
+
+      hr {
+        width: 100%;
+        border-top: 1px solid lightgrey;
+        border-bottom: 0px;
+      }
+
+      button {
+        all: unset;
+
+        cursor: pointer;
+
+        background-color: black;
+        color: whitesmoke;
+        padding: 10px 20px;
+      }
+
+      .error-message {
+        color: darkred;
+        margin-bottom: 10px;
+
+        font-size: small;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+
+        &.inline-field {
+          flex-direction: row;
+          gap: 10px;
+          align-items: center;
+        }
+
+        label {
+          font-weight: bold;
+        }
+
+        input[type="text"] {
+          all: unset;
+
+          cursor: text;
+
+          padding: 10px 20px;
+          background-color: whitesmoke;
+          border-radius: 5px;
+
+          &:-moz-read-only {
+            color: grey;
+          }
+
+          &:read-only {
+            color: grey;
+          }
+        }
+
+        .attributes {
+          display: grid;
+          grid-template-columns: 1fr 1.5fr;
+          height: 350px;
+          max-height: 350px;
+          gap: 15px;
+
+          padding: 15px 0px;
+
+          .attribute-names {
+            overflow-y: scroll;
+
+            padding: 5px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 5px;
+
+            .attribute-item {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+
+              img {
+                height: 30px;
+
+                padding: 5px;
+
+                &:hover {
+                  background-color: whitesmoke;
+                }
+              }
+
+              .attribute-details {
+                flex-grow: 1;
+
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+
+                .attribute-details-name {
+                  text-align: start;
+                  font-weight: lighter;
+                }
+
+                .attribute-details-primary-key-flag {
+                  font-size: x-small;
+                  font-weight: bold;
+                  text-align: start;
+                }
+              }
+            }
+
+            .attribute-add,
+            .attribute-details {
+              padding: 5px;
+
+              text-align: center;
+              font-weight: bold;
+
+              &:hover {
+                background-color: whitesmoke;
+              }
+            }
+          }
+
+          .attribute-info {
+            overflow-y: auto;
+
+            padding-right: 10px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 15px;
+
+            .field {
+              gap: 10px;
+            }
+
+            .attribute-type {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+
+              .attribute-type-select {
+                all: unset;
+
+                cursor: pointer;
+
+                padding: 10px 20px;
+                background-color: whitesmoke;
+                border-radius: 5px;
+              }
+
+              input[name="attribute-type-size"] {
+                all: unset;
+
+                cursor: pointer;
+
+                width: 80px;
+
+                padding: 10px 20px;
+                background-color: whitesmoke;
+                border-radius: 5px;
+
+                &:disabled {
+                  color: grey;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+      }
+    }
+  }
+}

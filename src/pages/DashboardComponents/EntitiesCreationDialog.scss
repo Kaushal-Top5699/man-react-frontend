@@ -1,0 +1,154 @@
+.entities-creation-dialog {
+  position: fixed;
+  z-index: 1000;
+
+  width: 100vw;
+  height: 95vh;
+
+  border: 0px;
+  border-radius: 25px;
+
+  &::-webkit-backdrop {
+    background: hsl(0 0% 0% / 50%);
+  }
+
+  &::backdrop {
+    background: hsl(0 0% 0% / 50%);
+  }
+
+  .ecd-body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    height: 100%;
+
+    .dismiss-btn-container {
+      display: flex;
+      justify-content: flex-end;
+
+      .dismiss-btn {
+        height: 30px;
+        padding: 5px;
+
+        cursor: pointer;
+
+        &:hover {
+          background-color: whitesmoke;
+        }
+      }
+    }
+
+    .content {
+      flex-grow: 1;
+
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 15px;
+
+      .controls-container {
+        display: grid;
+        grid-template-rows: 1fr auto;
+        gap: 15px;
+
+        .controls {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 10px;
+
+          button[type="stream-button"] {
+            all: unset;
+
+            &:enabled {
+              cursor: pointer;
+
+              border: 1px solid rgb(0, 71, 94);
+              color: rgb(0, 104, 138);
+            }
+
+            &:disabled {
+              border: 1px solid rgb(79, 79, 79);
+              color: rgb(121, 121, 121);
+            }
+
+            background-color: whitesmoke;
+            font-weight: bold;
+            font-size: larger;
+            border-radius: 20px;
+            padding: 15px;
+
+            display: grid;
+            place-content: center;
+
+            transition: background-color 200ms ease, color 200ms ease;
+            &:enabled:hover {
+              background-color: rgb(0, 71, 94);
+              color: white;
+            }
+          }
+
+          button[type="enum-button"] {
+            all: unset;
+
+            &:enabled {
+              cursor: pointer;
+
+              border: 1px solid rgb(0, 94, 33);
+              color: rgb(0, 140, 49);
+            }
+
+            &:disabled {
+              border: 1px solid rgb(79, 79, 79);
+              color: rgb(121, 121, 121);
+            }
+
+            background-color: whitesmoke;
+            font-weight: bold;
+            font-size: larger;
+            border-radius: 20px;
+            padding: 15px;
+
+            display: grid;
+            place-content: center;
+
+            transition: background-color 200ms ease, color 200ms ease;
+            &:enabled:hover {
+              background-color: rgb(0, 94, 33);
+              color: white;
+            }
+          }
+        }
+
+        .entity-create {
+          all: unset;
+
+          &:enabled {
+            cursor: pointer;
+
+            background-color: black;
+            color: whitesmoke;
+          }
+
+          &:disabled {
+            background-color: grey;
+            color: whitesmoke;
+          }
+
+          padding: 15px;
+
+          display: grid;
+          place-content: center;
+        }
+      }
+    }
+  }
+}
+
+dialog::-webkit-backdrop {
+  background: hsl(0 0% 0% / 50%);
+}
+
+dialog::backdrop {
+  background: hsl(0 0% 0% / 50%);
+}

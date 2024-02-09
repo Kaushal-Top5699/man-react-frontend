@@ -1,0 +1,58 @@
+.footer {
+  padding: 10px;
+  margin: 5px;
+
+  background-color: #4c8bf5;
+  color: white;
+  font-size: small;
+  font-weight: 600;
+
+  display: flex;
+
+  .credits {
+    flex-grow: 1;
+
+    display: flex;
+    gap: 5px;
+  }
+
+  .trailing {
+    display: flex;
+    gap: 5px;
+  }
+
+  a {
+    all: unset;
+
+    cursor: pointer;
+  }
+}
+
+.footer-2 {
+  padding: 10px;
+
+  background-color: #4c8bf5;
+  color: white;
+  font-size: small;
+  font-weight: 600;
+
+  display: flex;
+
+  .credits {
+    flex-grow: 1;
+
+    display: flex;
+    gap: 5px;
+  }
+
+  .trailing {
+    display: flex;
+    gap: 5px;
+  }
+
+  a {
+    all: unset;
+
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,30 @@
+:root {
+  font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 11.5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 2px;
+
+  &:hover {
+    background: #555;
+  }
+}

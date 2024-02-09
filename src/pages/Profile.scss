@@ -1,0 +1,100 @@
+.profile-page {
+  height: 100%;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  .body {
+    padding: 50px;
+
+    // Set background image dynamically
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.delete-account-dialog {
+  position: fixed;
+  z-index: 1000;
+  cursor: default;
+
+  width: -webkit-fit-content;
+
+  width: -moz-fit-content;
+
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+
+  border: 0px;
+  border-radius: 25px;
+
+  &::-webkit-backdrop {
+    background: hsl(0 0% 0% / 50%);
+  }
+
+  &::backdrop {
+    background: hsl(0 0% 0% / 50%);
+  }
+
+  .body {
+    all: unset;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+
+    .title {
+      font-size: x-large;
+      font-weight: bold;
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .caption {
+      font-size: large;
+    }
+
+    .dialog-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 15px;
+
+      button {
+        all: unset;
+
+        &[type="critical"] {
+          &:enabled {
+            background-color: red;
+            color: white;
+          }
+        }
+
+        &:enabled {
+          cursor: pointer;
+
+          background-color: black;
+          color: whitesmoke;
+        }
+
+        &:disabled {
+          background-color: grey;
+          color: whitesmoke;
+        }
+
+        padding: 15px;
+
+        display: grid;
+        place-content: center;
+      }
+    }
+  }
+}

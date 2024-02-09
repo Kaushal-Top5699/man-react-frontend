@@ -1,0 +1,19 @@
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+
+  background-color: #0009;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  > img {
+    width: 40px;
+  }
+
+  z-index: 1000;
+}

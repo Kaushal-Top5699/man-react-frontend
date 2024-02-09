@@ -1,0 +1,188 @@
+.enum-node {
+  all: unset;
+
+  cursor: pointer;
+  position: relative;
+
+  background-color: whitesmoke;
+  color: rgb(0, 140, 49);
+  font-weight: bold;
+  font-size: larger;
+  border: 1px solid rgb(0, 94, 33);
+  border-radius: 20px;
+  padding: 15px 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+
+  transition: background-color 200ms ease, color 200ms ease;
+  &:hover {
+    background-color: rgb(0, 94, 33);
+    color: white;
+  }
+
+  .enum-name {
+    font-size: smaller;
+    font-weight: normal;
+  }
+
+  .dismiss-node {
+    cursor: pointer;
+
+    height: 20px;
+
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+}
+
+.enum-node-editor-dialog {
+  position: fixed;
+  z-index: 2000;
+
+  width: 600px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 20px;
+
+  border: 0px;
+  border-radius: 25px;
+
+  &::-webkit-backdrop {
+    background: hsl(0 0% 0% / 50%);
+  }
+
+  &::backdrop {
+    background: hsl(0 0% 0% / 50%);
+  }
+
+  .dialog-content {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-end;
+
+      hr {
+        width: 100%;
+        border-top: 1px solid lightgrey;
+        border-bottom: 0px;
+      }
+
+      button {
+        all: unset;
+
+        cursor: pointer;
+
+        background-color: black;
+        color: whitesmoke;
+        padding: 10px 20px;
+      }
+
+      .error-message {
+        color: darkred;
+        margin-bottom: 10px;
+
+        font-size: small;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+
+        label {
+          font-weight: bold;
+        }
+
+        input[type="text"] {
+          all: unset;
+
+          cursor: text;
+
+          padding: 10px 20px;
+          background-color: whitesmoke;
+          border-radius: 5px;
+
+          &:-moz-read-only {
+            color: grey;
+          }
+
+          &:read-only {
+            color: grey;
+          }
+        }
+
+        .values {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 20px;
+
+          min-height: 35vh;
+          max-height: 50vh;
+          overflow-y: auto;
+
+          .add-value {
+            cursor: pointer;
+
+            padding: 5px;
+
+            text-align: center;
+            font-weight: bold;
+
+            &:hover {
+              background-color: whitesmoke;
+            }
+          }
+
+          .value-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .value {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              width: 100%;
+
+              input {
+                flex-grow: 1;
+              }
+
+              img {
+                height: 30px;
+
+                padding: 5px;
+
+                &:hover {
+                  background-color: whitesmoke;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+      }
+    }
+  }
+}
